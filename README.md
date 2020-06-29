@@ -15,7 +15,7 @@ deno test
 
 ## allowed routes
 Endpoint  | Type of operation | explanation
-----------|-------------------|------------
+---------:|:-----------------:|:-----------
 /users    | GET               | get all users
 /user/:id | GET               | get the user with the id `:id`
 /user     | POST              | add a new user; it must receive a JSON body with the proprieties `name` and `email`
