@@ -2,13 +2,13 @@ import { assertEquals } from 'https://deno.land/std/testing/asserts.ts';
 import { Users } from '../../src/model/user.ts';
 
 Deno.test('Unit: can list the users', () => {
-	let users : Users = new Users();
+	let users: Users = new Users();
 
 	assertEquals(users.getUsers(), []);
 });
 
 Deno.test('Unit: can create new users', () => {
-	let users : Users = new Users();
+	let users: Users = new Users();
 
 	for (let i = 0; i <= 2; i++) {
 		users.addUser('Foo Bar', 'foobar@email.com');
@@ -22,7 +22,7 @@ Deno.test('Unit: can create new users', () => {
 });
 
 Deno.test('Unit: can update a user', () => {
-	let users : Users = new Users();
+	let users: Users = new Users();
 
 	users.addUser('Foo Bar', 'foobar@email.com');
 	users.updateUser(0, 'Foo', 'foo@email.com');
@@ -32,7 +32,7 @@ Deno.test('Unit: can update a user', () => {
 });
 
 Deno.test('Unit: can delete a user', () => {
-	let users : Users = new Users();
+	let users: Users = new Users();
 
 	users.addUser('Foo Bar', 'foobar@email.com');
 	users.deleteUser(0);
