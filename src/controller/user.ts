@@ -25,9 +25,10 @@ export const getUser = (context: RouterContext): void => {
 };
 
 export const addUser = async (context: Context): Promise<void> => {
-	const body = await context.request.body();
+	const { value } = context.request.body({ type: 'json' });
+	const { name, email } = await value;
 
-	users.addUser(body.value.name, body.value.email);
+	users.addUser(name, email);
 
 	context.response.status = 201; // http status code created
 };
@@ -37,9 +38,10 @@ export const updateUser = async (context: RouterContext): Promise<void> => {
 		const user: IUser | undefined = users.getUser(parseInt(context.params.id));
 
 		if (user) {
-			const body = await context.request.body();
+			const { value } = context.request.body({ type: 'json' });
+			const { name, email } = await value;
 
-			users.updateUser(parseInt(context.params.id), body.value.name, body.value.email);
+			users.updateUser(parseInt(context.params.id), name, email);
 
 			context.response.status = 200; // http status code created
 		}
