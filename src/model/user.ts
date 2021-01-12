@@ -12,7 +12,7 @@ export class Users {
 	}
 
 	public getUser(id: number): IUser | undefined {
-		return this.users.find((user: IUser) => user.id == id);
+		return this.users.find((user: IUser) => user.id === id);
 	}
 
 	public addUser(name: String, email: String) {
